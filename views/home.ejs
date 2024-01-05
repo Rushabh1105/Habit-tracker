@@ -1,0 +1,67 @@
+
+
+<div class="habits-main container position-absolute top-50 start-50 translate-middle">
+    <form action="/addHabit" method="post" style="margin-bottom: 0px;">
+        <div class="row mx-2 habit-form">
+            <div class="col-4">
+                    <label for="" class="">Habit :</label>
+                    <input type="text" name="habit" placeholder="Add a habit" class="form-input">
+            </div>
+            <div class="col-6 mx-auto">
+                    <label for="">Description :</label>
+                    <input type="text" name="desc" placeholder="Add description" class="w-75 form-input">
+            </div>
+            <div class="col-2">
+                <button type="submit" value="Add" class="btn py-0 h-100 add-button">Add</button>
+            </div>   
+        </div>
+    </form>
+
+    <% for(habit in habits) {%>
+
+        <div class="habit-container">
+            <div class="habit">
+                <span class="left-side col-2">
+                    <label for="habits"class="name fw-bold" ><%= habits[habit].name %> </label>
+                </span>
+                <div class="col-8">
+                    <label for="desc" class="desc pt-1"><%= habits[habit].description %></label>
+                </div>
+                <div class="delete-btn">
+                    <a href="/delete/<%= habits[habit]._id %>"><i class="fa-solid fa-trash"></i></a>
+                </div>
+            </div>
+            <div class="habit-status">
+                <div class="dates">
+                    <% let dates = habits[habit].dates; %>
+                    <% dates = dates.reverse() %>
+                    <% for(let i = dates.length-1; i < dates.length-7 || i >= 0; i--){%>
+                        <div class="date">
+                            <div class="dt">
+                                <p><%=dates[i].day%>/<%=dates[i].month+1%>/<%=dates[i].year%></p>
+                            </div>
+                            <div class="sts">
+                                <% if(dates[i].status == 'Done'){ %>
+                                    <i class="fa-solid fa-check"></i>
+                                <%}else if(dates[i].status == 'Not Done'){%>
+                                    <i class="fa-solid fa-x"></i>
+                                <%}else{%>
+                                    <i class="fa-regular fa-circle"></i>
+                                <%}%>
+                            </div>
+                            <div class="change-sts">
+                                <% if(dates[i].status == 'Done'){ %>
+                                    <a href="/changeStatus/<%=habits[habit]._id%>&NotDone&<%=dates[i]._id%>">Mark Not Done</a>
+                                <%}else if(dates[i].status == 'Not Done'){%>
+                                    <a href="/changeStatus/<%=habits[habit]._id%>&Done&<%=dates[i]._id%>">Mark As Done</a>
+                                <%}else{%>
+                                    <a href="/changeStatus/<%=habits[habit]._id%>&Done&<%=dates[i]._id%>">Mark As Done</a>
+                                <%}%>
+                            </div>
+                        </div>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+    <%}%> 
+</div>

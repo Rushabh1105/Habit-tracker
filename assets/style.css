@@ -1,0 +1,172 @@
+/* Styles for body */
+body{
+    margin: 0;
+    padding: 0;
+    background-color: grey;
+    color: white;
+}
+
+/* Styles for header part */
+.header {
+    margin-bottom: 0px;
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    border-bottom: 1px solid black;
+    border-radius: 0 0 8px 8px; 
+    padding: 10px;
+}
+
+/* Styles for logo */
+.header-logo {
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Styles for header link */
+.header-link {
+    text-decoration: none;
+    color: #ecf0f1; /* Light text color for better visibility */
+}
+
+/* Styles for main container which displays the content of app */
+.main-container {
+    height: 96vh;
+    margin-bottom: 0;
+    background-color: grey;
+    border-radius: 10px;
+    overflow: hidden;
+    color: Red;
+}
+
+/* Habits container */
+.habits-main {
+    padding-top: 2%;
+    padding-bottom: 1%;
+    width: 100%;
+    background-color: darkgray;
+    border-radius: 10px; 
+    font-weight: 200;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 90%;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    overflow-y: scroll;
+    font-size: 20px;
+    /* font-size: larger; */
+    margin-top: 10px;
+}
+
+/* Add habit form */
+.habit-form {
+    margin-bottom: 1%;
+}
+
+/* Submit nutton */
+.add-button {
+    background-color: blue; 
+    color: white;
+}
+
+/* Scroll bar settings */
+.habits-main::-webkit-scrollbar {
+    display: none; 
+}
+
+/* For taking habit input */
+.form-input{
+    border-radius: 5px;
+}
+
+/* Habit container which displays all habits */
+.habit-container{
+    border: 2px solid black;
+    border-radius: 8px;
+    margin: 5px;
+    padding: 10px;
+}
+
+/* Single habit in container */
+.habit{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* All Dates for each habit */
+.dates{
+    width: 100%;
+    height: 150px;
+    background-color: black;
+    margin: 5px 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+/* Individual Date item */
+.date{
+    width: 12%;
+    height: 120px;
+    background-color: red;
+    margin: auto 8px;
+    color: white;
+}
+
+/* Date conetnt */
+.dt p{
+    text-align: center;
+    width: 100%;
+    height: 30%;
+    background-color: darkred;
+}
+
+/* Habit status */
+.sts{
+    text-align: center;
+    width: 100%;
+    height: 40%;
+}
+
+/* Change habit status */
+.change-sts{
+    text-align: center;
+    width: 100%;
+    height: 30%;
+    background-color: darkred;
+}
+
+/* Error handler */
+.error-container {
+    text-align: center;
+}
+
+/* Error heading */
+.error-heading{
+    color: #333;
+}
+
+/* Error message */
+.error-message{
+    color: #666;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px; 
+}
+
+/* Go to previous page button */
+.go-back{
+    color: #4285f4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.go-back:hover {
+    text-decoration: underline;
+}
